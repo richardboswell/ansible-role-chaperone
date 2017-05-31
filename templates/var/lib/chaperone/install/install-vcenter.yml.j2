@@ -18,7 +18,6 @@
     - id: create_oob_vcenter_objects
       name: "Create OOB vCenter DC+ESX Clusters+Networking"
       commands:
-        - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_oob_datacenter_create_task"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_oob_datacenter"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_oob_clusters"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_oob_vcenter_dvs"
@@ -33,7 +32,6 @@
     - id: create_ib_vcenter_objects
       name: "Create IB vCenter DC+ESX Clusters+Networking"
       commands:
-        - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_ib_datacenter_create_task"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_ib_datacenter"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_ib_clusters"
         - "/opt/{{ django_app }}/{{ django_app }}_play_tags vcenter_config.yml create_ib_vcenter_dvs"
