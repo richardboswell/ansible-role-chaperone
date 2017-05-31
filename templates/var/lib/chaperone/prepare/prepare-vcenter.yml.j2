@@ -22,12 +22,6 @@
         - id: oob_vcenter_mgmt_esx_server_mgmt_url-{{ oobmgmtesx }}
           name: "ESX Server Management IP"
           optional: 0
-{% if deploy_esx_autodeploy == '1' %}
-        - id: oob_vcenter_mgmt_esx_server_mac_address-{{ oobmgmtesx }}
-          name: "ESX Server MAC Address"
-          optional: 1
-          default: ""
-{% endif %}
         - id: oob_vcenter_mgmt_esx_server_mgmt_netmask-{{ oobmgmtesx }}
           name: "ESX Server Management IP Netmask"
           optional: 0
@@ -221,12 +215,6 @@
         - id: ib_vcenter_mgmt_esx_server_mgmt_url-{{ ibmgmtesx }}
           name: "ESX Server Management IP"
           optional: 0
-{% if deploy_esx_autodeploy == '1' %}
-        - id: ib_vcenter_mgmt_esx_server_mac_address-{{ ibmgmtesx }}
-          name: "ESX Server MAC Address"
-          optional: 1
-          default: ""
-{% endif %}
         - id: ib_vcenter_mgmt_esx_server_mgmt_netmask-{{ ibmgmtesx }}
           name: "ESX Server Management IP Netmask"
           optional: 0
@@ -271,12 +259,6 @@
         - id: nsxedge_esx_server_mgmt_url-{{ nsxesx }}
           name: "ESX Server Management IP"
           optional: 0
-{% if deploy_esx_autodeploy == '1' %}
-        - id: nsxedge_esx_server_mac_address-{{ nsxesx }}
-          name: "ESX Server MAC Address"
-          optional: 1
-          default: ""
-{% endif %}
         - id: nsxedge_esx_server_mgmt_netmask-{{ nsxesx }}
           name: "ESX Server Management IP Netmask"
           optional: 0
@@ -321,12 +303,6 @@
         - id: compute_esx_server_mgmt_url-{{ computeesx }}
           name: "ESX Server Management IP"
           optional: 0
-{% if deploy_esx_autodeploy == '1' %}
-        - id: compute_esx_server_mac_address-{{ computeesx }}
-          name: "ESX Server MAC Address"
-          optional: 1
-          default: ""
-{% endif %}
         - id: compute_esx_server_mgmt_netmask-{{ computeesx }}
           name: "ESX Server Management IP Netmask"
           optional: 0

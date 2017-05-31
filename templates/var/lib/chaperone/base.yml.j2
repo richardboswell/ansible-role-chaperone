@@ -15,118 +15,49 @@
 #
 ---
 - Prepare:
-{% if deploy_phase1 == '1' %}
-{% include 'prepare/prepare-vcsa.yml.j2' %}
-{% include 'prepare/prepare-vcenter.yml.j2' %}
-{% endif %}
-
-{% if (deploy_phase1 == '0') and (deploy_esx_autodeploy == '1') -%}
-{% include 'prepare/prepare-esx-autodeploy.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_esx_dnsmasq == '1') -%}
-{% include 'prepare/prepare-esx-dnsmasq.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_ra == '1') -%}
-{% include 'prepare/prepare-nfv-ra.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vcenter == '1') -%}
+{% if deploy_vcenter == '1' -%}
 {% include 'prepare/prepare-vcsa.yml.j2' %}
 {% include 'prepare/prepare-vcenter.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_nsx == '1') or (configure_nsx_manager == '1') -%}
+{% if deploy_nsx == '1' -%}
 {% include 'prepare/prepare-nsx.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_vio == '1') -%}
+{% if deploy_vio == '1' -%}
 {% include 'prepare/prepare-vio.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_photon_controller == '1') -%}
+{% if deploy_photon_controller == '1' -%}
 {% include 'prepare/prepare-photon-controller.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_kubernetes == '1') -%}
+{% if deploy_kubernetes == '1' -%}
 {% include 'prepare/prepare-kubernetes.yml.j2' %}
 {% include 'prepare/prepare-apps-on-kubernetes.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_vrops == '1') -%}
-{% include 'prepare/prepare-vrops.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vra == '1') -%}
-{% include 'prepare/prepare-vra.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vrli == '1') -%}
-{% include 'prepare/prepare-vrli.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vrb == '1') -%}
-{% include 'prepare/prepare-vrb.yml.j2' %}
-{% endif -%}
-
 - Install:
-{% if deploy_phase1 == '1' %}
-{% include 'install/install-phase1.yml.j2' %}
-{% endif %}
-
-{% if (deploy_phase1 == '0') and (deploy_ambient == '1') -%}
-{% include 'install/install-ambient.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_esx_autodeploy == '1') -%}
-{% include 'install/install-esx-autodeploy.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_esx_dnsmasq == '1') -%}
-{% include 'install/install-esx-dnsmasq.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_ra == '1') -%}
-{% include 'install/install-nfv-ra.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vcenter == '1') -%}
+{% if deploy_vcenter == '1' -%}
 {% include 'install/install-vcsa.yml.j2' %}
 {% include 'install/install-vcenter.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_nsx == '1') or (configure_nsx_manager == '1') -%}
+{% if deploy_nsx == '1' -%}
 {% include 'install/install-nsx.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_vrops == '1') -%}
-{% include 'install/install-vrops.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vrli == '1') -%}
-{% include 'install/install-vrli.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_photon_controller == '1') -%}
+{% if deploy_photon_controller == '1' -%}
 {% include 'install/install-photon-controller.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_vio == '1') -%}
+{% if deploy_vio == '1' -%}
 {% include 'install/install-vio.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_kubernetes == '1') -%}
+{% if deploy_kubernetes == '1' -%}
 {% include 'install/install-kubernetes.yml.j2' %}
 {% include 'install/install-apps-on-kubernetes.yml.j2' %}
 {% include 'install/install-kube_with_demo_app.yml.j2' %}
 {% endif -%}
 
-{% if (deploy_phase1 == '0') and (deploy_vra == '1') -%}
-{% include 'install/install-vra.yml.j2' %}
-{% include 'install/install-vrpt.yml.j2' %}
-{% endif -%}
-
-{% if (deploy_phase1 == '0') and (deploy_vrb == '1') -%}
-{% include 'install/install-vrb.yml.j2' %}
-{% endif -%}

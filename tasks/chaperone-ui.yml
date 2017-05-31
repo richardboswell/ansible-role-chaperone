@@ -110,19 +110,19 @@
   tags:
     - rsync
 
-- name: recursively sync the containers built by ansible from local repos
-  become: no
-  synchronize:
-    src: "../../../containers"
-    dest: "/opt/"
-    recursive: yes
-    rsync_opts:
-      - "--no-motd"
-      - "--exclude=.git"
-    archive: no
-    delete: yes
-  tags:
-    - rsync
+#- name: recursively sync the containers built by ansible from local repos
+#  become: no
+#  synchronize:
+#    src: "../../../containers"
+#    dest: "/opt/"
+#    recursive: yes
+#    rsync_opts:
+#      - "--no-motd"
+#      - "--exclude=.git"
+#    archive: no
+#    delete: yes
+#  tags:
+#    - rsync
 
 - name: create playbook execution harnesses and inventory creation scripts
   template:
